@@ -3,8 +3,6 @@ function onReady() {
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
 
-  var todos = new Array();
-
   addToDoForm.addEventListener('submit', () => {
     event.preventDefault();
     // get the text
@@ -23,8 +21,6 @@ function onReady() {
 
     // set the title
     newLi.textContent = title;
-    newLi.id = todos.length;
-    todos.push(newLi);
 
     // attach the checkbox to the li
     newLi.appendChild(checkbox);
@@ -36,24 +32,10 @@ function onReady() {
     //empty the input
     newToDoText.value = '';
     button.textContent = 'Delete';
-    button.type = 'delete';
     button.onclick = deleteItem;
   });
 
   function deleteItem(e) {
-    var id = e.target.parentElement.id;
-    console.log("delete an item: " + id);
-    // find and remove the item in the array
-
-
-    for (var i = 0; i < todos.length; i++) {
-      if (todos[i].id == id) {
-        var li = e.target.parentElement;
-        todos.splice(i, 1);
-        break;
-      }
-    }
-
     // find and remove the item in the page
     var ul = document.getElementById("toDoList");
     var li = e.target.parentElement;
