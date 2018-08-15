@@ -1,0 +1,12 @@
+h1 {
+  justify-content: center;
+  text-align: center;
+  color: hsla(340, 100%, 60%, 0.8);
+  font-weight: bold;
+ }
+ main {
+   padding-left: 5em;
+
+   color: hsla(120, 100%, 35%, 0.8);
+   font-size: 1.5em;
+  }
